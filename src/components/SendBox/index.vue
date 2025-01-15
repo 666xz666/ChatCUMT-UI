@@ -318,13 +318,13 @@ export default {
                             if (event.status === 500 || event.status === 404) {
                                 this.$notify({
                                     title: '无法连接本地接口!',
-                                    message: '请检测网络或接口是否开启',
+                                    message: data.detail,
                                     type: 'error',
                                 });
                             } else if (event.status === 422) {
                                 this.$notify({
                                     title: '本地接口错误!',
-                                    message: '请检测接口是否正常',
+                                    message: data.detail,
                                     type: 'error',
                                 })
                             }

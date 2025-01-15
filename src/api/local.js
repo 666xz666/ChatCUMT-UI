@@ -16,7 +16,10 @@ import store from '../store';
  */
 export async function local({prompt, history, files, controller, onopen, onmessage, onclose, onerror}) {
     // 本地接口设置了多种模式，根据store中的chat_type来选择 ['chat','search','rag','file']
-    const URL = '/local/' + store.state.setting.chat_type + '/stream';
+    let type = store.state.setting.chat_type;
+    if (store.state.setting.chat_type === 'search') type = 'url_info'
+
+    const URL = '/local/chat/' + type;
    
     const response = await fetchEventSource(URL, {
         method: 'POST',
@@ -48,9 +51,9 @@ export async function local({prompt, history, files, controller, onopen, onmessa
  */
 function getParams(prompt, history, files) {
     if (store.state.setting.chat_type == 'chat' ||
-        store.state.setting.chat_type == 'rag') 
+        store.state.setting.chat_type == 'search') 
         return JSON.stringify({
-            prompt: prompt,
+            user_input: prompt,
             history: getHistory(history),
     });
     else if (store.state.setting.chat_type =='file')
