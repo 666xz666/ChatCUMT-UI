@@ -56,6 +56,12 @@ function getParams(prompt, history, files) {
             user_input: prompt,
             history: getHistory(history),
     });
+    else if (store.state.setting.chat_type =='rag')
+        return JSON.stringify({
+            user_input: prompt,
+            history: getHistory(history),
+            kb_uuid: '75899b8f-8b25-48e0-9c42-781efc655c72'
+    });
     else if (store.state.setting.chat_type =='file')
         return JSON.stringify({
             prompt: prompt,
