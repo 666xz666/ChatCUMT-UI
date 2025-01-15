@@ -18,6 +18,7 @@ export async function local({prompt, history, files, controller, onopen, onmessa
     // 本地接口设置了多种模式，根据store中的chat_type来选择 ['chat','search','rag','file']
     let type = store.state.setting.chat_type;
     if (store.state.setting.chat_type === 'search') type = 'url_info'
+    if (store.state.setting.chat_type === 'graph') type = 'graph_rag'
 
     const URL = '/local/chat/' + type;
    
@@ -56,7 +57,8 @@ function getParams(prompt, history, files) {
             user_input: prompt,
             history: getHistory(history),
     });
-    else if (store.state.setting.chat_type =='rag')
+    else if (store.state.setting.chat_type =='rag' ||
+             store.state.setting.chat_type =='graph')
         return JSON.stringify({
             user_input: prompt,
             history: getHistory(history),
