@@ -19,6 +19,7 @@ export async function local({prompt, history, files, controller, onopen, onmessa
     let type = store.state.setting.chat_type;
     if (store.state.setting.chat_type === 'search') type = 'url_info'
     if (store.state.setting.chat_type === 'graph') type = 'graph_rag'
+    
 
     const URL = '/local/chat/' + type;
    
