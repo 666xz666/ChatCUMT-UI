@@ -101,6 +101,13 @@ export default {
 
                 // 更新prev_id
                 this.uploadData.prev_id = response.id;
+            } else {
+                console.error('上传失败:', response.msg);
+                this.$notify({
+                    title: '上传失败！',
+                    message: response.msg,
+                    type: 'error',
+                });
             }
         },
         // delFile(uuid) {
