@@ -3,7 +3,7 @@
         <!-- 上方Logo Start -->
         <div class="logo">
             <img src="../assets/images/logo.png" />
-            <span>CUMT智慧助手</span>
+            <span>矿小言</span>
         </div>
         <!-- 上方Logo End -->
 

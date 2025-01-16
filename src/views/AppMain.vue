@@ -10,8 +10,8 @@
                 <ChatCard :query="c['query']" :answer="c['answer']" :model_name="c['model_name']" :responseTime="c['responseTime']" :finishTime="c['finishTime']" v-for="c in chat"/>
                 
                 <div class="title-container theme-bg dashed-border" v-if="chat.length === 0">
-                    <div class="title-line">CUMT智慧助手</div>
-                    <div class="sub-title-line"> CUMT智慧助手。我们的平台支持以下功能：</div>
+                    <div class="title-line">矿小言</div>
+                    <div class="sub-title-line"> 矿小言。我们的平台支持以下功能：</div>
                     <el-row>
                         <el-col :span="12">
                             <div class="grid-content bg-purple-light">
