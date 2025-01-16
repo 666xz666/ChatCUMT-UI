@@ -20,7 +20,7 @@
                             <el-upload
                                 class="upload-button"
                                 drag
-                                action="/local/upload"
+                                action="/local/upload_temp"
                                 multiple
                                 :on-success="handleSuccess"
                                 accept=".pdf,.doc,.docx,.txt"
@@ -114,7 +114,7 @@ export default {
         async delFile(uuid) {
             try {
                 // 发送请求到 FastAPI 接口删除文件
-                const response = await axios.post('/local/delete', {
+                const response = await axios.post('/local/delete_temp', {
                     prev_id: this.files.find(item => item.uuid === uuid).id, // 假设 prevId 是 Vuex store 中的 prev_id
                     file_name: this.files.find(item => item.uuid === uuid).title
                 });
