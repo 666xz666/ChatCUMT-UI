@@ -26,7 +26,7 @@ const defaultSettings = {
     "theme": 'glass',
     "bg": bg,
     "chat_detail": true,
-    "method": 'local',
+    "method": 'remote',
     "region": 'Xunfei_Spark',
     "api_key": '...',
     "model_name": 'xunfei',
