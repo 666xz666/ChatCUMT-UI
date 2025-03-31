@@ -8,7 +8,7 @@ import xunfeiAvatar from "@/assets/images/xunfei.svg";
 import defaultAvatar from "@/assets/images/logo.png";
 import bg from "@/assets/images/bg.jpg";
 
-const settingStorage = JSON.parse(localStorage.getItem('settingStorage')) || ''
+const settingStorage = JSON.parse(localStorage.getItem('settingStorage')) || {}
 
 /**
  * defaultSettings 是项目初次运行时的默认配置
